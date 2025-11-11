@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700" rel="stylesheet">
+  <!-- Google Fonts: Asimovian -->
+  <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <title>Eshasri Tech Solutions</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Hero Section -->
+<section class="hero" id="home">
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Eshasri Tech Solutions</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#About">About</a>
+        <div class="dropdown">
+          <a href="#Services">Services</a>
+          <div class="dropdown-content mega-menu">
+            <div class="mega-left">
+              <div class="preview-card">
+                <img src="./assets/services hover picture.png" alt="Services Preview" class="preview-image">
+                <div class="preview-text">
+                  <h3>Our Expertise</h3>
+                  <p>Specialized solutions in engineering domains.</p>
+                </div>
+              </div>
+            </div>
+            <div class="mega-right">
+              <a href="#CSE">Computer Science</a>
+              <a href="#EEE">Electrical Engineering</a>
+              <a href="#ECE">Electronics and Computer Science</a>
+            </div>
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <!-- Saffron accent line appears on scroll (added via JS later) — but we’ll keep it optional for now -->
+  </header>
+  <!-- Floating circles background -->
+  <div class="floating-circle circle1"></div>
+  <div class="floating-circle circle2"></div>
+  <div class="floating-circle circle3"></div>
+  <div class="floating-circle circle4"></div>
+  <div class="floating-circle circle5"></div>
+  <div class="floating-circle circle6"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Engineering Intelligent Systems for Next-Gen Engineers</h1>
+      <p>
+        Domain-specialized solutions in Computer Science, Electronics, and Electrical Engineering —
+        built with industrial rigor, scalable architecture, and academic insight.
+      </p>
+      <a href="#contact" class="cta-button">Start a Project</a>
+    </div>
+    <div class="hero-visual">
+      <!-- Placeholder for 3D render, Lottie animation, or video -->
+      <div class="visual-placeholder">
+        <!-- You can replace this with: -->
+        <!-- <video autoplay muted loop><source src="tech-animation.mp4" type="video/mp4"></video> -->
+        <!-- OR an embedded Spline/Three.js canvas later -->
+        <img src="./assets/geometry background.png" alt="Geometry Background" class="geometry-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="about-header">
+    <h2 class="about-title">About Us</h2>
+    <h1 class="about-subtitle">Built for<br><span class="large-text">Next Wave of Engineers</span></h1>
+  </div>
+  <div class="container">
+    <div class="about-visual">
+      <img src="./assets/about-us.png" alt="About Us" class="about-image">
+    </div>
+    <div class="about-content">
+      <h2>Where Academic Vision Meets Engineering Excellence</h2>
+      <p>
+        Founded by industry practitioners and domain specialists, we bridge the gap between theoretical learning and real-world technology deployment.
+      </p>
+      <p>
+        Our work spans intelligent software systems, embedded hardware prototyping, and energy-efficient automation — always aligned with academic calendars and industrial standards.
+      </p>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <span class="highlight-icon">⚙️</span>
+          <span>End-to-end system ownership</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🎓</span>
+          <span>Mentorship-driven delivery</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🚀</span>
+          <span>Deployment-ready artifacts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Domain Expertise Section -->
+<section class="expertise" id="expertise">
+  <div class="container">
+    <div class="section-header">
+      <h2>Domain-Specialized Engineering</h2>
+      <p>We deliver rigorous, end-to-end solutions across three core engineering verticals.</p>
+    </div>
+
+    <div class="expertise-grid">
+      <!-- CSE -->
+      <div class="expertise-card">
+        <span class="card-icon material-icons">developer_mode</span>
+        <h3>Computer Systems & AI</h3>
+        <ul>
+          <li>Full-stack web applications</li>
+          <li>App development</li>
+          <li>Machine learning models</li>
+          <li>Secure, scalable architecture</li>
+        </ul>
+      </div>
+
+      <!-- ECE -->
+      <div class="expertise-card">
+        <span class="card-icon material-icons">memory</span>
+        <h3>Embedded Intelligence</h3>
+        <ul>
+          <li>IoT & sensor network prototypes</li>
+          <li>FPGA and microcontroller systems</li>
+          <li>Real-time signal processing</li>
+          <li>Hardware-software co-design</li>
+        </ul>
+      </div>
+
+      <!-- EEE -->
+      <div class="expertise-card">
+        <span class="card-icon material-icons">bolt</span>
+        <h3>Energy & Automation</h3>
+        <ul>
+          <li>Smart grid simulations</li>
+          <li>Power electronics control</li>
+          <li>Industrial automation logic</li>
+          <li>Renewable energy integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</body>
+</html>
