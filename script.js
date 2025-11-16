@@ -1,53 +1,81 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ============================
+      HAMBURGER TOGGLE (MOBILE)
+  ============================ */
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
-  const navbar = document.querySelector('.navbar');
-  const aboutTitle = document.querySelector('.about-title');
 
-  hamburger.addEventListener('click', function() {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-  });
-
-  // Add shadow to navbar on scroll
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 0) {
-      navbar.classList.add('scrolled');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  }
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('underline');
+      entry.target.classList.remove('underline-out');
     } else {
-      navbar.classList.remove('scrolled');
+      entry.target.classList.add('underline-out');
+      entry.target.classList.remove('underline');
     }
   });
+}, { threshold: 0.4 });
 
-  // Toggle dropdown on click for touch devices
-  const dropdownLinks = document.querySelectorAll('.dropdown > a');
-  dropdownLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const content = link.nextElementSibling;
-      content.classList.toggle('active');
-    });
-  });
+// observe ALL titles with the class
+document.querySelectorAll('.section-title').forEach(title => observer.observe(title));
 
-  // Add underline to about title and section header h2 when scrolled into view
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('underline-out');
-        entry.target.classList.add('underline');
-      } else {
-        entry.target.classList.remove('underline');
-        entry.target.classList.add('underline-out');
-      }
-    });
-  }, { threshold: 0.5 });
 
-  observer.observe(aboutTitle);
-
-  // Observe the section header h2
-  const sectionHeaderTitle = document.querySelector('.section-header h2');
-  if (sectionHeaderTitle) {
-    observer.observe(sectionHeaderTitle);
+  /* ======================================================
+      FADE-IN ANIMATION FOR EXPERTISE TITLE ON LOAD
+  ====================================================== */
+  if (expertiseTitle) {
+    expertiseTitle.style.animation = 'fadeInUp 1s ease-out';
   }
 });
 
 
+document.querySelectorAll('.form-group.float input, .form-group.float textarea')
+  .forEach((field) => {
+
+    // add filled class on load (for autofill)
+    if (field.value.trim() !== "") {
+      field.parentElement.classList.add("filled");
+    }
+
+    field.addEventListener("focus", () => {
+      field.parentElement.classList.add("focused");
+    });
+
+    field.addEventListener("blur", () => {
+      field.parentElement.classList.remove("focused");
+
+      if (field.value.trim() === "") {
+        field.parentElement.classList.remove("filled");
+      } else {
+        field.parentElement.classList.add("filled");
+      }
+    });
+
+    field.addEventListener("input", () => {
+      if (field.value.trim() === "") {
+        field.parentElement.classList.remove("filled");
+      } else {
+        field.parentElement.classList.add("filled");
+      }
+    });
+});
+document.querySelectorAll('.section-title').forEach(t => {
+  console.log("Observing:", t.textContent);
+});
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
